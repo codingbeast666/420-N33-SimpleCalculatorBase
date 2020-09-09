@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using calculatorLibrary;
-
 
 namespace SimpleCalculator
 {
@@ -16,8 +16,8 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-           
-          
+
+
 
             try
             {
@@ -25,7 +25,7 @@ namespace SimpleCalculator
                 InputConverter inputConverter = new InputConverter();
 
                 //Class to perform actual calculations
-             
+
 
                 CalculatorEngineLibrary calculatorEngine = new CalculatorEngineLibrary();
 
@@ -54,7 +54,7 @@ namespace SimpleCalculator
 
                 String secondNumberPlaceHolder = Console.ReadLine();
 
-
+                Console.WriteLine("write operator type");
                 bool isDouble2 = Double.TryParse(secondNumberPlaceHolder, out double secondNumber);
 
                 while (!isDouble2)
@@ -87,19 +87,22 @@ namespace SimpleCalculator
 
 
 
-                while (!isInArray) 
+                while (!isInArray)
                 {
 
-                    if (arrayOfOperators.Contains(operation.ToLower())) {
+                    if (arrayOfOperators.Contains(operation.ToLower()))
+                    {
                         Console.WriteLine("Calculating....");
 
                         isInArray = true;
                     }
 
-                    else { 
-                    Console.WriteLine("you typed an invalid operator. Please enter one such as '-' or 'divide' ");
-                    operation = Console.ReadLine(); }
-              
+                    else
+                    {
+                        Console.WriteLine("you typed an invalid operator. Please enter one such as '-' or 'divide' ");
+                        operation = Console.ReadLine();
+                    }
+
                 }
 
 
@@ -114,10 +117,44 @@ namespace SimpleCalculator
                 myStringBuild.AppendFormat(" equals : {0:n2}", result);
                 Console.WriteLine(myStringBuild);
 
+                //Code for the extra functionality , calculates the circumference. 
 
 
 
+                Console.WriteLine(" Would you like to calculate the circumference ? y/n ? ");
 
+                bool yourAnswer = false;
+                String answerCircumference = Console.ReadLine();
+                String radius = "";
+                // asks user if you want to calculate circumference or exit
+
+
+                if (answerCircumference.Equals("y"))
+                {
+                    radius = Console.ReadLine();
+
+                }
+                else
+                {
+                    Console.WriteLine("goodbye"); Environment.Exit(0);
+                }
+
+
+                bool isDouble3 = Double.TryParse(radius, out double radiusNumber);
+
+                //prevents user from entering negative or invalid type
+                while (!isDouble3 || radiusNumber < 0)
+                {
+                    Console.WriteLine("Invalid number type");
+                    radius=Console.ReadLine();
+                    isDouble3 = Double.TryParse(radius, out  radiusNumber);
+                }
+               
+                //object of type circumferenceCalculator(a class that we created)
+                circumferenceCalculator myCircumferenceCalculator = new circumferenceCalculator();
+
+                Console.WriteLine(myCircumferenceCalculator.radiant(radiusNumber));
+               
             }
             catch (Exception ex)
             {

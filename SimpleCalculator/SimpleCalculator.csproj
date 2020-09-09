@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="circumferenceCalculator.cs" />
     <Compile Include="InputConverter.cs" />
     <Compile Include="StringToIntConverter.cs" />
     <Compile Include="Program.cs" />

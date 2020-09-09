@@ -6,3 +6,8 @@ user can type "exponent" or "^" to make get a number to the power of another num
 -------------------------
 
 
+Added a new functionality : Calculating the circumference if the user wishes so. This will not work if the user inputs letters or a negative number.
+
+
+Andrian Zberea
+Ludovic MH
