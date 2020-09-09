@@ -99,8 +99,21 @@ namespace SimpleCalculator
               
                 }
 
-                double result = calculatorEngine.Calculate(operation,firstNumber,secondNumber);
-                Console.WriteLine(result);
+
+                //displays formated result with stringbuilder and string formatting
+
+                StringBuilder myStringBuild = new StringBuilder();
+                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+
+                myStringBuild.Insert(0, firstNumber + " " + operation + " " + secondNumber);
+
+
+                myStringBuild.AppendFormat(" equals : {0:n2}", result);
+                Console.WriteLine(myStringBuild);
+
+
+
+
 
             }
             catch (Exception ex)
