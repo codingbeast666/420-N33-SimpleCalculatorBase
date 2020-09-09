@@ -78,7 +78,8 @@ namespace SimpleCalculator
                 arrayOfOperators.Add("substract");
                 arrayOfOperators.Add("multiply");
                 arrayOfOperators.Add("divide");
-                
+                arrayOfOperators.Add("^");
+                arrayOfOperators.Add("exponent");
                 String operation = Console.ReadLine();
 
                 //used to check if one of the operators is present
