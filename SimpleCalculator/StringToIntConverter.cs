@@ -22,7 +22,7 @@ namespace SimpleCalculator
             }
             catch (Exception ex)
             {
-                throw;
+                throw ;
             }
         }
 
