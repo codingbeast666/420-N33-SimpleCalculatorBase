@@ -7,6 +7,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using calculatorLibrary;
+
 
 namespace SimpleCalculator
 {
@@ -14,7 +16,7 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            //will be useful for later..see catch block
+           
           
 
             try
@@ -23,17 +25,17 @@ namespace SimpleCalculator
                 InputConverter inputConverter = new InputConverter();
 
                 //Class to perform actual calculations
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
+             
+
+                CalculatorEngineLibrary calculatorEngine = new CalculatorEngineLibrary();
 
 
-
-               
 
                 //isDouble1 and 2 and used to verify code instead of directly sending the Console.ReadLine() value to the InputConverter Class
                 //this is mainly used to prevent the user from throwing an exception from a non-numeric number like "six" or "cat"
-               
 
-                        String firstNumberPlaceHolder = Console.ReadLine();
+                Console.WriteLine("write first number");
+                String firstNumberPlaceHolder = Console.ReadLine();
 
 
                 bool isDouble1 = Double.TryParse(firstNumberPlaceHolder, out double firstNumber);
