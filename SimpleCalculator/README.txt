@@ -10,4 +10,4 @@ Added a new functionality : Calculating the circumference if the user wishes so.
 
 
 Andrian Zberea 1830471
-Ludovic Marcoux Hoyos (LMH)  1932692
+Ludovic Marcoux Hoyos  1932692
